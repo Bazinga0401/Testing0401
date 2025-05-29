@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glassmorphism Login</title>
+  <link rel="stylesheet" href="login.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="background"></div>
+    <div class="login-box">
+      <div class="logo"><h2 id="login-title">Login</h2>
+    <p class="tagline">Enter your cridentials to access the site.</p></div>
+      <form id="loginForm">
+        <input type="text" placeholder="Username" name="username" required />
+        <input type="password" placeholder="Password" name="password" required />
+
+        <button type="submit" class="login-btn">Login</button>
+      
+
+        <p class="signup-text">
+          Don't have an account? <a href="#">Sign Up</a>
+        </p>
+        
+        <div class="options">
+       
+          <a href="#">Forgot login?</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== Inline JS ========== -->
+  <script>
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const username = this.username.value;
+    const password = this.password.value;
+
+    if (username === 'admin' && password === '1234') {
+      const loginBox = document.querySelector('.login-box');
+      loginBox.classList.add('animate__animated', 'animate__fadeOut');
+
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 800); // match animation time
+    } else {
+      alert('Invalid username or password.');
+    }
+  });
+  loginBox.style.setProperty('--animate-duration', '0.5s');
+  
+  </script>
+</body>
+</html>
