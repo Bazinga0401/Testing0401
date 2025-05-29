@@ -3,11 +3,12 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+
 body {
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
-  color: #333;
+  background: #252525;
+  color: #ffffff;
 }
 
 #header {
@@ -57,7 +58,7 @@ body {
 
 
 .day-card {
-  background: white;
+  background: rgb(82, 82, 82);
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
@@ -73,9 +74,10 @@ body {
 }
 
 .task {
+  color: #1f1f1f;
   margin: 0.3rem 0;
   padding: 0.6rem 0.4rem 0.6rem 1rem;
-  background: #e9f1ff;
+  background: #d7e6ff;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -86,7 +88,7 @@ body {
 }
 
 .task:hover {
-  background-color: #d6e8ff;
+  background-color: #bfd4ef;
 }
 
 .empty-msg {
