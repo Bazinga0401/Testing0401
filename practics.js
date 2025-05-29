@@ -8,7 +8,7 @@ const taskName = document.getElementById('taskName');
 const taskTime = document.getElementById('taskTime');
 
 // Store tasks as an array of arrays
-const tasks = JSON.parse(localStorage.getItem('tasks')) || [[], [], [], [], [], [], []];
+const tasks = [[], [], [], [], [], [], []];
 
 function renderWeek() {
   weekGrid.innerHTML = '';
@@ -55,7 +55,6 @@ function renderWeek() {
       const dayIdx = Number(span.getAttribute('data-day'));
       const taskIdx = Number(span.getAttribute('data-idx'));
       tasks[dayIdx].splice(taskIdx, 1);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
       renderWeek();
     };
   });
@@ -80,7 +79,6 @@ addTaskForm.onsubmit = function(e) {
     name: taskName.value,
     time: taskTime.value
   });
-  localStorage.setItem('tasks', JSON.stringify(tasks)); 
   renderWeek();
   addTaskForm.style.display = 'none';
   addTaskForm.reset();
