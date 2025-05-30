@@ -17,6 +17,7 @@ body {
   padding: 4rem 1rem;
   text-align: center;
   background: url(./bg.jpeg) no-repeat center center;
+  background-position: bottom 1px;
   background-size: cover;
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
