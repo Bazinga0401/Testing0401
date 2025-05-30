@@ -26,7 +26,6 @@ body, html {
   object-fit: cover;
   opacity: 1; /* Adjust for desired transparency */
 }
-
 /* Container setup */
 .container {
   display: flex;
