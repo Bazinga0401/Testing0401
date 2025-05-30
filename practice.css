@@ -207,6 +207,8 @@ body {
   flex-direction: column;
   gap: 1rem;
 }
+#addTaskForm{
+  color: #252525}
 
 .add-task-form input,
 .add-task-form select {
