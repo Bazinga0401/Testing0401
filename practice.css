@@ -16,7 +16,7 @@ body {
   z-index: 1;
   padding: 4rem 1rem;
   text-align: center;
-  background: url('https://images.pexels.com/photos/32164974/pexels-photo-32164974/free-photo-of-cherry-blossoms-in-springtime-seoul.jpeg') no-repeat center center;
+  background: url(./bg.jpeg) no-repeat center center;
   background-size: cover;
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
