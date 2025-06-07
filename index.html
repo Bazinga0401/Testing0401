@@ -20,11 +20,14 @@
 
         <button type="submit" class="login-btn">Login</button>
       
-
+<!-- 
         <p class="signup-text">
           Don't have an account? <a href="#">Sign Up</a>
-        </p>
-        
+        </p> -->
+   <div class="remember">
+  <input type="checkbox" name="remember" id="remember" />
+  <label for="remember">Remember Me</label>
+</div>
         <div class="options">
        
           <a href="#">Forgot login?</a>
@@ -33,29 +36,40 @@
       </form>
     </div>
   </div>
-<div class="background">
-  <img src="cover.jpeg" alt="Cover Image" class="cover-image" />
-</div>
+
   <!-- ========== Inline JS ========== -->
   <script>
-  document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const username = this.username.value;
-    const password = this.password.value;
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+  const username = this.username.value;
+  const password = this.password.value;
 
-    if (username === 'admin' && password === '1234') {
+  try {
+    const response = await fetch('https://task-backend-g375.onrender.com/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username, password })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
       const loginBox = document.querySelector('.login-box');
       loginBox.classList.add('animate__animated', 'animate__fadeOut');
-
       setTimeout(() => {
         window.location.href = "main.html";
-      }, 800); // match animation time
+      }, 800);
     } else {
-      alert('Invalid username or password.');
+      alert(data.message);
     }
-  });
-  loginBox.style.setProperty('--animate-duration', '0.5s');
-  
-  </script>
+  } catch (err) {
+    console.error('Error:', err);
+    alert('Server error occurred.');
+  }
+});
+</script>
+
 </body>
 </html>
